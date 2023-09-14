@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{% static 'admin.css' %}">
+</head>
+<body>
+    <div class="dashboard">
+        <h2>Admin Dashboard</h2>
+        <form action="{% url 'adddoc' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="dashboard-button">Register Doctor</button>
+        </form>
+        <form action="{% url 'addpat' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="dashboard-button">Register Patient</button>
+        </form>
+        <form action="{% url 'adddoc' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="dashboard-button">List of Doctors</button>
+        </form>
+        <form action="{% url 'adddoc' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="dashboard-button">List of Patients</button>
+        </form>
+    </div>
+</body>
+</html>

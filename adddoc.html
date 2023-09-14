@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Registration</title>
+    <link rel="stylesheet" href="{% static 'adddoc.css' %}">
+</head>
+<body>
+    <div class="registration-form">
+        <h2>Doctor Registration</h2>
+        <form action="{% url 'savedoc' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="doctorName">Doctor Name:</label>
+                <input type="text" id="doctorName" name="doctorName" placeholder="Enter Doctor's Name" required>
+            </div>
+            <div class="form-group">
+                <label for="doctorSpecialization">Specialization:</label>
+                <input type="text" id="doctorSpecialization" name="doctorSpecialization" placeholder="Enter Specialization" required>
+            </div>
+            <div class="form-group">
+                <label for="doctorNumber">Contact Number:</label>
+                <input type="text" id="doctorNumber" name="doctorNumber" placeholder="Enter Contact Number" required>
+            </div>
+            <button type="submit" class="submit-button">Register Doctor</button>
+        </form>
+    </div>
+</body>
+</html>
